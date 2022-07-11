@@ -7,7 +7,7 @@ import styles from './Search.module.scss';
 
 const Search: React.FC = () => {
   const dispatch = useDispatch();
-  const [value, setValue] = React.useState('');
+  const [value, setValue] = React.useState<string>('');
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   const onClickClear = () => {
@@ -23,7 +23,7 @@ const Search: React.FC = () => {
     [],
   );
 
-  const onChangeInput = (event: any) => {
+  const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
     updateSearchValue(event.target.value);
   };
